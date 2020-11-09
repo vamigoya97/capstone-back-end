@@ -5,20 +5,20 @@ const router = express.Router()
 const listScreeningsController = (req, res) => {
     db.collection('screening').find().toArray( async (err, screenings) => {
         if(err) {console.error(err)}
-        console.log(screenings)     
-        const screeningsWithLocations = await screenings.map( async screening => {
-            let loc;
-            console.log("before")
-            await db.collection('location').find({ "_id": screening.location_id }).toArray((err, location) => {
-                loc = location[0]
-                console.log(loc)
-                console.log("inside")
-            })
-            console.log("after")
-            screening.location = await loc || {}
-            return screening
-        })
-        res.send(screeningsWithLocations)
+        res.send(screenings)  
+        // const screeningsWithLocations = await screenings.map( async screening => {
+        //     let loc;
+        //     console.log("before")
+        //     await db.collection('location').find({ "_id": screening.location_id }).toArray((err, location) => {
+        //         loc = location[0]
+        //         console.log(loc)
+        //         console.log("inside")
+        //     })
+        //     console.log("after")
+        //     screening.location = await loc || {}
+        //     return screening
+        // })
+        // res.send(screeningsWithLocations)
     })
 }
 
