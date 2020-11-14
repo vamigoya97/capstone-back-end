@@ -6,4 +6,4 @@ This repository accounts for the back-end infrastructure for the web app Cinepub
 
 ## Author
 
-<a href="https://www.linkedin.com/in/victor-amigo-76146115b/>Victor Amigo</a>
+<a href="https://www.linkedin.com/in/victor-amigo-76146115b/">Victor Amigo</a>
